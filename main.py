@@ -8,7 +8,6 @@ import requests
 import praw
 
 CHANNEL_ID=('1271180861949349911')
-#MTMzMDExNjA5OTk3ODY5MDYxMQ.G0EuJp.0qNwP0a73KWc9sYbEwXakfCTwRH5op9ApsmmC8
 
 bot = commands.Bot(command_prefix="!", intents=discord.Intents.all())
 
@@ -229,4 +228,4 @@ async def meme(ctx):
     else:
         await ctx.send("Sorry, this meme is NSFW!")
 
-bot.run('MTMzMDExNjA5OTk3ODY5MDYxMQ.G0EuJp.0qNwP0a73KWc9sYbEwXakfCTwRH5op9ApsmmC8')
+bot.run('TOKEN')
