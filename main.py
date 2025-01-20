@@ -35,6 +35,7 @@ reddit = praw.Reddit(
 @bot.event
 async def on_ready():
     print("Bot is ready!")
+    await init_db()
     async with aiosqlite.connect('bot_data.db') as db:
         async with db.execute('SELECT guild_id, welcome_channel_id FROM settings') as cursor:
             async for row in cursor:
@@ -44,7 +45,6 @@ async def on_ready():
                     global welcome_channel_id
                     welcome_channel_id = channel_id
     print("Welcome channels loaded from the database.")
-    await init_db()
 
 @bot.command()
 async def ping(ctx):
